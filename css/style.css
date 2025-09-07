@@ -330,10 +330,24 @@ a:hover{
 
 .highlights .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr; /* default: 1 column on small screens */
   gap: 40px;
   max-width: 1100px;
   margin: auto;
+}
+
+/* Medium screens (≥768px) → 2 columns */
+@media (min-width: 768px) {
+  .highlights .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large screens (≥1200px) → 4 columns */
+@media (min-width: 1200px) {
+  .highlights .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .highlight-item {
@@ -350,7 +364,7 @@ a:hover{
 
 .highlight-item i {
   font-size: 40px;
-  color: var(--secondary); /* accent color */
+  color: var(--secondary);
   margin-bottom: 15px;
 }
 
@@ -365,8 +379,116 @@ a:hover{
   font-size: 14px;
   color: var(--light);
 }
+
 /***********************************
     COMPANY HIGHLIGHT SECTION ENDS
+***********************************/
+
+/***********************************
+    MISSION VISION STARTS
+***********************************/
+/* CTA Section (Mission & Vision) */
+.cta {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url("../img/pexels-shvetsa-3683051.jpg") center center;
+  background-size: cover;
+  background-attachment: fixed; /* creates a parallax-like moving effect */
+  padding: 80px 20px;
+}
+
+.cta .section-title h2,
+.cta .section-title p {
+  color: #fff;
+}
+
+.cta .content-box {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px); /* glass effect */
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.cta .content-box:hover {
+  transform: translateY(-8px);
+}
+
+.cta h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.cta p,
+.cta li {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.cta ul li {
+  margin-bottom: 8px;
+}
+
+/***********************************
+    Mision Vision ends
+***********************************/
+
+/***********************************
+    Licensed starts
+***********************************/
+/* Licensed & Trusted Section */
+
+
+/* Licensed Section */
+.licensed {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.licensed-bg {
+  background: url("../img/pexels-apasaric-7605733.jpg") no-repeat center center/cover;
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  z-index: 1;
+}
+
+/* Overlay effect for darkening */
+.licensed::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75); /* adjustable darkness */
+  z-index: 2;
+}
+
+.licensed .container {
+  position: relative;
+  z-index: 3;
+}
+
+.licensed-text h2 {
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--light);
+  text-transform: uppercase;
+}
+
+.licensed-text p {
+  font-size: 16px;
+  line-height: 2;
+  color: #f1f1f1;
+  max-width: 800px;
+  margin: auto;
+}
+
+
+/***********************************
+    LICENSED ENDS
 ***********************************/
 
 /***********************************
@@ -426,7 +548,7 @@ a:hover{
   color: var(--light);
   padding: 64px 20px 36px;
   border-radius: 6px;
-  clip-path: polygon(0 0, 100% 0, 100% 84%, 50% 100%, 0 84%);
+  
   z-index: 10;
   /* collapsed by default with animation */
   max-height: 0;
@@ -476,7 +598,7 @@ a:hover{
   .srv-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 900px; }
   .srv-item { max-width: 420px; }
 }
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .srv-grid { grid-template-columns: 1fr; gap: 22px; padding: 20px; }
   .srv-ring.outer { width: 130px; height: 130px; }
   .srv-ring.inner { width: 104px; height: 104px; border-width: 8px; }
