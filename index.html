@@ -111,16 +111,18 @@
     <!-- Carousel End -->
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about mt-5 pt-5">
+    <section id="about" class="about mt-3 pt-3">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2 mt-4" data-aos="fade-left" data-aos-delay="100">
+            <h1 class="mb-4 text_color2 text-center mb-5">Helse Pharmacy - 30 Years of Care and Trust </h1>
+          <div class="col-lg-6 order-2 order-lg-2 mt-4" data-aos="fade-left" data-aos-delay="100">
             <img src="img/Pharmacist in Modern Pharmacy Setting.png" class="img-fluid w-100" alt="" style="background-size: cover;">
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-            <h3 class="mb-4 text_color2">Helse Pharmacy - 30 Years of Care, Trust & Innovation</h3>
-            <p class="mb-3">
+          <div class="col-lg-6 pt-0 pt-lg-0 order-1 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            
+           <div class="order-3 order-lg-1 pt-lg-5">
+             <p class="mb-3">
             For over three decades,  <span style="color:#f98787;font-weight: 700;">Helse Pharmacy</span> has been a trusted name in 
             healthcare across the UAE. What began with a single vision has today grown into a leading pharmacy group 9 branches strategically located
             across the Emirates,serving communities with excellence, accessibility and care.
@@ -130,6 +132,7 @@
             grounded in reliability, affordability, and a deep commitment to customer well-being. We have proudly evolved into not just a retail pharmacy chain
             but also a distribution business, ensuring quality medicines and healthcare essentials reach every corner of the UAE.  </p>
            
+           </div>
           </div>
         </div>
 
@@ -167,48 +170,83 @@
 </section>
  <!-- Company Highlights Section ends-->
 
- <!-- Interactive circle starts-->
-<section class="approach-section">
-  <!-- Circle Part -->
-  <div class="circle-wrapper">
-    <!-- Outer Decorative Circle -->
-    <div class="outer-circle"></div>
-
-    <!-- Inner Circle with Icons -->
-    <div class="circle-container">
-      <div class="circle-center">What We Stands For</div>
-
-      <div class="circle-icon icon1 active" data-title="PRICE"
-        data-text="Competitive and fair pricing so healthcare is always within reach.">
-        <i class="fas fa-tags"></i>
+ <!-- Interactive icon starts-->
+<section class="srv-section" aria-label="Services with tag-panels">
+     <h2 class="mb-4 text_color2 text-center mb-5 section-title">WHAT WE STANDS FOR:</h2>
+  <div class="srv-grid">
+    <!-- Service 1 (open by default) -->
+    <article class="srv-item active" data-srv="1">
+      <div class="srv-circle" role="button" tabindex="0" aria-controls="srv-1" aria-expanded="true" title="Service 1">
+        <span class="srv-ring outer">
+          <span class="srv-ring inner">
+            <span class="srv-disc"><i class="fa fa-tag" aria-hidden="true"></i></span>
+          </span>
+        </span>
       </div>
+      <!-- Small heading under icon (only visible when NOT active) -->
+      <h4 class="srv-mini-heading">PRICE</h4>
 
-      <div class="circle-icon icon2" data-title="SERVICE"
-        data-text="Compassionate, personlized service, led by experienced pharmacists and staffs who put your health first.">
-        <i class="fas fa-concierge-bell"></i>
+      <div id="srv-1" class="srv-tag" aria-hidden="false">
+        <h3>PRICE</h3>
+        <p>Competitive and fair pricing so healthcare is always within reach.</p>
       </div>
+    </article>
 
-      <div class="circle-icon icon3" data-title="SELECTION"
-        data-text="A wide assortment of pharmaceuticals, wellness products, medical supplies, and personal care essentials - all under one roof">
-        <i class="fas fa-check-circle"></i>
+    <!-- Service 2 -->
+    <article class="srv-item" data-srv="2">
+      <div class="srv-circle" role="button" tabindex="0" aria-controls="srv-2" aria-expanded="false" title="Service 2">
+        <span class="srv-ring outer">
+          <span class="srv-ring inner">
+            <span class="srv-disc"><i class="fa fa-headset" aria-hidden="true"></i></span>
+          </span>
+        </span>
       </div>
+      <h4 class="srv-mini-heading">SERVICE</h4>
 
-      <div class="circle-icon icon4" data-title="GLOBAL STANDARDS"
-        data-text="Our services align with international standards, building trust and reliability.">
-        <i class="fas fa-globe"></i>
+      <div id="srv-2" class="srv-tag" aria-hidden="true">
+        <h3>SERVICE</h3>
+        <p>Compassionate, perzonlised service led by experienced pharmacists and staffs who put your health first.</p>
       </div>
-    </div>
-  </div>
+    </article>
 
-  <!-- Text Part -->
-  <div class="approach-text">
-    <h3 id="approach-title">PRICE</h3>
-    <p id="approach-desc">
-      We approach market access holistically to bring improved health outcomes and solutions to payers and patients, maximizing value generation.
-    </p>
+    <!-- Service 3 -->
+    <article class="srv-item" data-srv="3">
+      <div class="srv-circle" role="button" tabindex="0" aria-controls="srv-3" aria-expanded="false" title="Service 3">
+        <span class="srv-ring outer">
+          <span class="srv-ring inner">
+            <span class="srv-disc"><i class="fa fa-th-large" aria-hidden="true"></i></span>
+          </span>
+        </span>
+      </div>
+      <h4 class="srv-mini-heading">SELECTION</h4>
+
+      <div id="srv-3" class="srv-tag" aria-hidden="true">
+        <h3>SELECTION</h3>
+        <p>Awide assortment of pharmaceuticals, wellness products, medical supplies and personal care essentials - all under one roof</p>
+      </div>
+    </article>
+
+    <!-- Service 4 -->
+    <article class="srv-item" data-srv="4">
+      <div class="srv-circle" role="button" tabindex="0" aria-controls="srv-4" aria-expanded="false" title="Service 4">
+        <span class="srv-ring outer">
+          <span class="srv-ring inner">
+            <span class="srv-disc"><i class="fa fa-globe" aria-hidden="true"></i></span>
+          </span>
+        </span>
+      </div>
+      <h4 class="srv-mini-heading">GLOBAL STANDARS</h4>
+
+      <div id="srv-4" class="srv-tag" aria-hidden="true">
+        <h3>GLOBAL STANDARDS</h3>
+        <p>Our services align with international standards, building trust and reliability</p>
+      </div>
+    </article>
+
   </div>
 </section>
-<!-- interactive circle ends -->
+
+<!-- interactive icon ends -->
 
 
     <!-- About Start -->

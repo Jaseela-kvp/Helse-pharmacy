@@ -372,123 +372,133 @@ a:hover{
 /***********************************
     INTERACTIVE SECTION STARTS
 ***********************************/
-  .approach-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 50px 20px;
-    gap: 40px;
-  }
+.srv-section { padding: 60px 18px; background: transparent; }
+.srv-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+  justify-items: center;
+  box-sizing: border-box;
+}
 
-  .circle-wrapper {
-    position: relative;
-    width: 380px;
-    height: 380px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+/* Each item */
+.srv-item { width: 100%; max-width: 320px; position: relative; text-align: center; }
 
-  /* Outer Circle (design only) */
-  .outer-circle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 4px dashed var(--primary);
-    border-radius: 50%;
-    animation: rotateCircle 20s linear infinite;
-  }
+/* Circle (click target) - concentric rings */
+.srv-circle { cursor: pointer; display: block; margin: 0 auto; z-index: 30; position: relative; }
+.srv-ring.outer {
+  display:inline-flex; align-items:center; justify-content:center;
+  width: 160px; height: 160px; border-radius: 50%;
+  background: var(--light); /* outer white ring */
+  border: 6px solid var(--light);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.12);
+}
+.srv-ring.inner {
+  display:flex; align-items:center; justify-content:center;
+  width: 128px; height: 128px; border-radius: 50%;
+  border: 10px solid var(--primary); /* deep blue ring */
+  background: transparent;
+}
+.srv-disc {
+  width: 90px; height: 90px; border-radius: 50%;
+  display:flex; align-items:center; justify-content:center;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0%, #e8edf2 45%, #d7dfe8 100%);
+  color: var(--primary); font-size: 34px;
+  box-shadow: inset -6px -8px 12px rgba(0,0,0,0.06);
+}
 
-  /* Inner Circle */
-  .circle-container {
-    position: relative;
-    width: 280px;
-    height: 280px;
-    border: 6px solid var(--primary);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    z-index: 1;
-  }
+/* Circle hover and active state */
+.srv-circle:focus { outline: none; }
+.srv-item:not(.active) .srv-circle:hover .srv-disc { transform: scale(1.03); transition: transform .25s ease; }
+.srv-item.active .srv-ring.inner { border-color: #EFCACD; transition: border-color .25s ease, transform .25s ease; transform: scale(1.03); }
+.srv-item.active .srv-disc { background: linear-gradient(180deg,var(--primary),#fff); color:#0b2b13; }
 
-  .circle-center {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--primary);
-  }
+/* Tag (the blue banner shape) */
+.srv-tag {
+  width: 100%;
+  margin: -60px auto 0; /* pulled up so circle overlaps */
+  box-sizing: border-box;
+  position: relative;
+  background: var(--primary); /* main deep blue color */
+  color: var(--light);
+  padding: 64px 20px 36px;
+  border-radius: 6px;
+  clip-path: polygon(0 0, 100% 0, 100% 84%, 50% 100%, 0 84%);
+  z-index: 10;
+  /* collapsed by default with animation */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: max-height .45s cubic-bezier(.2,.9,.3,1), opacity .28s ease, transform .36s ease, padding .36s ease;
+}
 
-  .circle-icon {
-    position: absolute;
-    width: 55px;
-    height: 55px;
-    background: var(--light);
-    color: var(--primary);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
-  }
+/* Decorative shoulders at top-left & top-right (appear with tag) */
+.srv-tag::before, .srv-tag::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  width: 78px;
+  height: 40px;
+  background: var(--primary);
+  border-radius: 6px 6px 0 0;
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .28s ease, transform .28s ease;
+}
+.srv-tag::before { left: 8%; }
+.srv-tag::after { right: 8%; }
 
-  .circle-icon.active {
-    background: var(--primary);
-    color:var(--light);
-    transform: scale(1.2);
-    box-shadow: 0 0 15px rgba(0, 119, 182, 0.5);
-  }
+/* Text inside tag */
+.srv-tag h3 { margin: 0 0 12px; font-size: 22px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; color: #fff; }
+.srv-tag p { margin: 0 auto; max-width: 88%; line-height: 1.6; color: rgba(255,255,255,0.95); font-size: 15px; }
 
-  .icon1 { top: -20px; left: 50%; transform: translateX(-50%); }
-  .icon2 { top: 50%; right: -20px; transform: translateY(-50%); }
-  .icon3 { bottom: -20px; left: 50%; transform: translateX(-50%); }
-  .icon4 { top: 50%; left: -20px; transform: translateY(-50%); }
+/* Active state -> expand the tag */
+.srv-item.active .srv-tag {
+  max-height: 480px; /* large enough for content */
+  opacity: 1;
+  transform: translateY(0);
+  padding: 80px 20px 40px;
+}
+.srv-item.active .srv-tag::before, .srv-item.active .srv-tag::after {
+  opacity: 1; transform: translateY(0);
+}
 
-  .approach-text {
-    max-width: 400px;
-  }
-  .approach-text h3 {
-    color: var(--primary);
-    margin-bottom: 15px;
-  }
-  .approach-text p {
-    font-size: 16px;
-    color: var(--primary);
-    font-weight: 500;
-  }
+/* When not active hide the shoulders and tag completely (only circle visible) */
+.srv-item:not(.active) .srv-tag { pointer-events: none; }
 
-  /* Rotation animation for outer circle */
-  @keyframes rotateCircle {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+/* Layout: responsive */
+@media (max-width: 1100px) {
+  .srv-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 900px; }
+  .srv-item { max-width: 420px; }
+}
+@media (max-width: 600px) {
+  .srv-grid { grid-template-columns: 1fr; gap: 22px; padding: 20px; }
+  .srv-ring.outer { width: 130px; height: 130px; }
+  .srv-ring.inner { width: 104px; height: 104px; border-width: 8px; }
+  .srv-disc { width: 76px; height: 76px; font-size: 26px; }
+  .srv-tag { margin-top: -52px; padding-top: 56px; }
+  .srv-tag::before, .srv-tag::after { width: 56px; left: 6%; right: 6%; top: -34px; }
+}
+/* Mini headings under icons (default state) */
+.srv-mini-heading {
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+  transition: opacity .3s ease, transform .3s ease;
+}
 
-  @media (max-width: 768px) {
-    .approach-section {
-      flex-direction: column;
-      text-align: center;
-    }
-    .approach-text {
-      max-width: 100%;
-    }
-    .outer-circle{
-        width: 80%;
-        height: 80%;
-    }
-    .circle-container {
-        width: 240px;
-        height: 240px;
-    }
-    .approach-section{
-        padding-left: 0;
-    }
-    .circle-center{
-        font-size: 14px;
-    }
-  }
+/* Hide the mini-heading when active (tag shown) */
+.srv-item.active .srv-mini-heading {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
 
 /***********************************
     INTERACTIVE SECTION ENDS

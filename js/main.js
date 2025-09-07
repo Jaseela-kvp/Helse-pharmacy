@@ -35,17 +35,7 @@ $(window).scroll(function () {
     }
 });
 
-// Interactive section
-document.querySelectorAll(".circle-icon").forEach(icon => {
-    icon.addEventListener("click", () => {
-      document.querySelectorAll(".circle-icon").forEach(i => i.classList.remove("active"));
-      icon.classList.add("active");
 
-      document.getElementById("approach-title").innerText = icon.getAttribute("data-title");
-      document.getElementById("approach-desc").innerText = icon.getAttribute("data-text");
-    });
-  });
-// Interactive section ends
 
 
     // Facts counter
@@ -90,7 +80,53 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// gallery
+
+// interactive section
+(function () {
+  // Scoped selectors for safety
+  const items = document.querySelectorAll('.srv-item');
+
+  function setActive(targetItem) {
+    items.forEach(it => {
+      const circle = it.querySelector('.srv-circle');
+      const tag = it.querySelector('.srv-tag');
+      const isActive = (it === targetItem);
+
+      if (isActive) {
+        it.classList.add('active');
+        if (circle) circle.setAttribute('aria-expanded', 'true');
+        if (tag) tag.setAttribute('aria-hidden', 'false');
+      } else {
+        it.classList.remove('active');
+        if (circle) circle.setAttribute('aria-expanded', 'false');
+        if (tag) tag.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
+
+  // Initialize (first item remains active by default)
+  // but ensure aria states are correct on load
+  if (items.length) {
+    const defaultActive = document.querySelector('.srv-item.active') || items[0];
+    setActive(defaultActive);
+  }
+
+  // click + keyboard (Enter/Space) handling
+  items.forEach(item => {
+    const circle = item.querySelector('.srv-circle');
+    if (!circle) return;
+
+    circle.addEventListener('click', () => setActive(item));
+    circle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        setActive(item);
+      }
+    });
+  });
+
+})();
+// ends
 
 
 
