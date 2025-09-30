@@ -627,6 +627,49 @@ a:hover{
 ***********************************/
 
 /***********************************
+   Branches Section
+***********************************/
+.branches {
+  background: #fff;
+}
+
+.branch-card {
+  background:var(--primary);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.branch-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.branch-title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--light);
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.branch-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--light);
+}
+
+.branch-card i {
+  color: var(--secondary); /* green icon color */
+}
+
+/***********************************
+   Branches Section ends
+***********************************/
+
+
+/***********************************
     ABOUT SECTION
 ***********************************/
 
@@ -702,8 +745,9 @@ a:hover{
 
 /*** Footer ***/
 .footer {
-    background: linear-gradient(rgba(53, 53, 53, .7), rgba(53, 53, 53, .7)), url(../img/footer.jpg) center center no-repeat;
-    background-size: cover;
+   /** background: linear-gradient(rgb(28,59,88, .7), rgba(28,59,88, .7)), url(../img/footer.jpg) center center no-repeat;**/
+   background-color: #1C3B58;
+   background-size: cover;
 }
 
 .footer .btn.btn-social {
@@ -743,7 +787,7 @@ a:hover{
 }
 
 .footer .btn.btn-link:hover {
-    color: var(--primary);
+    color: var(--secondary);
     letter-spacing: 1px;
     box-shadow: none;
     
@@ -760,7 +804,7 @@ a:hover{
 }
 
 .footer .copyright a:hover {
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 

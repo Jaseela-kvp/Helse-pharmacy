@@ -26,6 +26,16 @@
         }
     });
     // icons click
+
+// Parallax effect
+document.addEventListener("scroll", function () {
+  const scrolled = window.scrollY;
+  const bg = document.querySelector(".parallax-bg");
+  if (bg) {
+    bg.style.backgroundPosition = `center ${scrolled * -0.2}px`;
+  }
+});
+
 // Back to top button
 $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
