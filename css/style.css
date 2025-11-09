@@ -1,4 +1,9 @@
 /********** Template CSS **********/
+body {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+}
+
 :root {
     --primary: #1b3956;
     --light: #cfe2e1;
@@ -138,17 +143,18 @@ a:hover{
         font-size: 12px;
     }
 }
+/***********************************
+    TOPBAR ENDS
+***********************************/
+
 
 /***********************************
     NAVBAR
 ***********************************/
 
-/* Custom navbar height */
 .navbar {
     height: 100px;
 }
-
-/* Logo resizing */
 .logo {
     max-width: 450px;
     max-height: 90px;
@@ -160,7 +166,6 @@ a:hover{
     }
 }
 
-/* Navbar toggler (hamburger) custom color #1b3956 */
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%231b3956' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
@@ -205,53 +210,25 @@ a:hover{
         color: var(--secondary);
     }
 }
-
+/***********************************
+    NAVBAR ENDS
+***********************************/
 
 /***********************************
     HEADER CAROUSEL
 ***********************************/
 .header-carousel .owl-carousel-item {
     max-height: 90vh;
-    position: relative; /* needed for overlay text */
-}
-
-/* Overlay text inside video/image carousel */
-.header-carousel .carousel-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-    z-index: 2;
-}
-
-.header-carousel .carousel-text h1 {
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-.header-carousel .carousel-text p {
-    font-size: 1.25rem;
-    margin-top: 10px;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .header-carousel .owl-carousel-item h1 {
-        font-size: 1.8rem;
-    }
-
-    .header-carousel .owl-carousel-item p {
-        font-size: 14px;
-    }
+    position: relative; 
 }
 
 /***********************************
     HEADER CAROUSEL ENDS
 ***********************************/
 
-/*** Section Title ***/
+/***********************************
+    SECTION TITLE STARTS
+***********************************/
 .section-title h1 {
     position: relative;
     display: inline-block;
@@ -283,9 +260,12 @@ a:hover{
 .section-title.text-start h1::before {
     display: none;
 }
+/***********************************
+    SECTION TITLE ENDS
+***********************************/
 
 /*--------------------------------------------------------------
-# About
+# ABOUT SECTION STARTS
 --------------------------------------------------------------*/
 .about .content h3 {
   font-weight: 700;
@@ -316,12 +296,13 @@ a:hover{
 }
 
 /*--------------------------------------------------------------
-# About ENDS
+# ABOUT SECTION ENDS
 --------------------------------------------------------------*/
+
 /***********************************
     COMPANY HIGHLIGHT SECTION 
 ***********************************/
-/* Highlights Section */
+
 .highlights {
   background: #f9fafc;
   padding: 60px 20px;
@@ -385,14 +366,13 @@ a:hover{
 ***********************************/
 
 /***********************************
-    MISSION VISION STARTS
+    MISSION VISSION STARTS
 ***********************************/
-/* CTA Section (Mission & Vision) */
 .cta {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-              url("../img/pexels-shvetsa-3683051.jpg") center center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+              url("../img/missionvision.jpg") center center;
   background-size: cover;
-  background-attachment: fixed; /* creates a parallax-like moving effect */
+  background-attachment: scroll;
   padding: 80px 20px;
 }
 
@@ -402,8 +382,7 @@ a:hover{
 }
 
 .cta .content-box {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px); /* glass effect */
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255,255,255,0.2);
   color: #fff;
   transition: transform 0.3s ease;
@@ -429,16 +408,13 @@ a:hover{
 }
 
 /***********************************
-    Mision Vision ends
+    MISSION VISION ENDS
 ***********************************/
 
 /***********************************
-    Licensed starts
+    LICENSED SECTION STARTS
 ***********************************/
-/* Licensed & Trusted Section */
 
-
-/* Licensed Section */
 .licensed {
   position: relative;
   min-height: 400px;
@@ -488,13 +464,18 @@ a:hover{
 
 
 /***********************************
-    LICENSED ENDS
+    LICENSED SECTION ENDS
 ***********************************/
 
 /***********************************
-    INTERACTIVE SECTION STARTS
+   WHAT WE STANDS ENDS
 ***********************************/
-.srv-section { padding: 60px 18px; background: transparent; }
+
+.srv-section {
+  padding: 60px 18px;
+  background: transparent;
+}
+
 .srv-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -503,131 +484,105 @@ a:hover{
   margin: 0 auto;
   align-items: start;
   justify-items: center;
-  box-sizing: border-box;
 }
 
-/* Each item */
-.srv-item { width: 100%; max-width: 320px; position: relative; text-align: center; }
+.srv-item {
+  text-align: center;
+  max-width: 280px;
+}
 
-/* Circle (click target) - concentric rings */
-.srv-circle { cursor: pointer; display: block; margin: 0 auto; z-index: 30; position: relative; }
+/* Circle styles */
+.srv-circle {
+  display: inline-block;
+  position: relative;
+}
+
 .srv-ring.outer {
-  display:inline-flex; align-items:center; justify-content:center;
-  width: 160px; height: 160px; border-radius: 50%;
-  background: var(--light); /* outer white ring */
-  border: 6px solid var(--light);
-  box-shadow: 0 6px 10px rgba(0,0,0,0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: #d9e6e6;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
+
 .srv-ring.inner {
-  display:flex; align-items:center; justify-content:center;
-  width: 128px; height: 128px; border-radius: 50%;
-  border: 10px solid var(--primary); /* deep blue ring */
-  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  border: 10px solid #16354a;
 }
+
 .srv-disc {
-  width: 90px; height: 90px; border-radius: 50%;
-  display:flex; align-items:center; justify-content:center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: radial-gradient(circle at 30% 30%, #ffffff 0%, #e8edf2 45%, #d7dfe8 100%);
-  color: var(--primary); font-size: 34px;
+  color: #16354a;
+  font-size: 34px;
   box-shadow: inset -6px -8px 12px rgba(0,0,0,0.06);
 }
 
-/* Circle hover and active state */
-.srv-circle:focus { outline: none; }
-.srv-item:not(.active) .srv-circle:hover .srv-disc { transform: scale(1.03); transition: transform .25s ease; }
-.srv-item.active .srv-ring.inner { border-color: #EFCACD; transition: border-color .25s ease, transform .25s ease; transform: scale(1.03); }
-.srv-item.active .srv-disc { background: linear-gradient(180deg,var(--primary),#fff); color:#0b2b13; }
-
-/* Tag (the blue banner shape) */
-.srv-tag {
-  width: 100%;
-  margin: -60px auto 0; /* pulled up so circle overlaps */
-  box-sizing: border-box;
-  position: relative;
-  background: var(--primary); /* main deep blue color */
-  color: var(--light);
-  padding: 64px 20px 36px;
-  border-radius: 6px;
-  
-  z-index: 10;
-  /* collapsed by default with animation */
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: max-height .45s cubic-bezier(.2,.9,.3,1), opacity .28s ease, transform .36s ease, padding .36s ease;
-}
-
-/* Decorative shoulders at top-left & top-right (appear with tag) */
-.srv-tag::before, .srv-tag::after {
-  content: "";
-  position: absolute;
-  top: -40px;
-  width: 78px;
-  height: 40px;
-  background: var(--primary);
-  border-radius: 6px 6px 0 0;
-  z-index: 5;
-  opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity .28s ease, transform .28s ease;
-}
-.srv-tag::before { left: 8%; }
-.srv-tag::after { right: 8%; }
-
-/* Text inside tag */
-.srv-tag h3 { margin: 0 0 12px; font-size: 22px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; color: #fff; }
-.srv-tag p { margin: 0 auto; max-width: 88%; line-height: 1.6; color: rgba(255,255,255,0.95); font-size: 15px; }
-
-/* Active state -> expand the tag */
-.srv-item.active .srv-tag {
-  max-height: 480px; /* large enough for content */
-  opacity: 1;
-  transform: translateY(0);
-  padding: 80px 20px 40px;
-}
-.srv-item.active .srv-tag::before, .srv-item.active .srv-tag::after {
-  opacity: 1; transform: translateY(0);
-}
-
-/* When not active hide the shoulders and tag completely (only circle visible) */
-.srv-item:not(.active) .srv-tag { pointer-events: none; }
-
-/* Layout: responsive */
-@media (max-width: 1100px) {
-  .srv-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 900px; }
-  .srv-item { max-width: 420px; }
-}
-@media (max-width: 767px) {
-  .srv-grid { grid-template-columns: 1fr; gap: 22px; padding: 20px; }
-  .srv-ring.outer { width: 130px; height: 130px; }
-  .srv-ring.inner { width: 104px; height: 104px; border-width: 8px; }
-  .srv-disc { width: 76px; height: 76px; font-size: 26px; }
-  .srv-tag { margin-top: -52px; padding-top: 56px; }
-  .srv-tag::before, .srv-tag::after { width: 56px; left: 6%; right: 6%; top: -34px; }
-}
-/* Mini headings under icons (default state) */
+/* Title under icon */
 .srv-mini-heading {
-  margin-top: 14px;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--primary);
-  transition: opacity .3s ease, transform .3s ease;
+  margin-top: 18px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #16354a;
+  text-transform: uppercase;
 }
 
-/* Hide the mini-heading when active (tag shown) */
-.srv-item.active .srv-mini-heading {
-  opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
+/* Description text under heading */
+.srv-desc {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #445566;
 }
+
+/* Responsive layout */
+@media (max-width: 1100px) {
+  .srv-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .srv-grid {
+    grid-template-columns: 1fr;
+  }
+  .srv-ring.outer {
+    width: 130px;
+    height: 130px;
+  }
+  .srv-ring.inner {
+    width: 104px;
+    height: 104px;
+  }
+  .srv-disc {
+    width: 76px;
+    height: 76px;
+    font-size: 26px;
+  }
+}
+
+
+
 
 /***********************************
-    INTERACTIVE SECTION ENDS
+    WHAT WE STANDS FOR SECTION ENDS
 ***********************************/
 
 /***********************************
-   Branches Section
+  BRANCHES SECTION STARTS
 ***********************************/
 .branches {
   background: #fff;
@@ -665,7 +620,7 @@ a:hover{
 }
 
 /***********************************
-   Branches Section ends
+   BRANCHES SECTION ENDS
 ***********************************/
 
 
@@ -709,7 +664,9 @@ a:hover{
     ABOUT SECTION ENDS
 ***********************************/
 
-/*** Service ***/
+/***********************************
+    SERVICE SECTION STARTS
+***********************************/
 .service-item img {
     transition: .5s;
 }
@@ -718,8 +675,14 @@ a:hover{
     transform: scale(1.1);
 }
 
+/***********************************
+    SERVICE SECTION  ENDS
+***********************************/
 
-/*** Contact ***/
+
+/***********************************
+    CONTACT SECTION STARTS
+***********************************/
 @media (min-width: 992px) {
     .container.contact {
         max-width: 100% !important;
@@ -741,11 +704,14 @@ a:hover{
         padding-left: calc(((100% - 1320px) / 2) + .75rem);
     }
 }
+/***********************************
+    CONTACT SECTION ENDS
+***********************************/
 
-
-/*** Footer ***/
+/***********************************
+   FOOTER STARTS
+***********************************/
 .footer {
-   /** background: linear-gradient(rgb(28,59,88, .7), rgba(28,59,88, .7)), url(../img/footer.jpg) center center no-repeat;**/
    background-color: #1C3B58;
    background-size: cover;
 }
@@ -806,7 +772,9 @@ a:hover{
 .footer .copyright a:hover {
     color: var(--secondary);
 }
-
+/***********************************
+    FOOTER SECTION ENDS
+***********************************/
 
 /* advantage section */
 .service_section {
@@ -866,14 +834,11 @@ a:hover{
   
 /* service ends */
 
-/* hot gallery */
-.col-margin {
-    margin-right: 3rem;  
-}
-/* hot gallery ends */
 
 
-/* Contact Form */
+/***********************************
+    CONTACT US STARTS 
+***********************************/
 .contact-card  {
     background-color: transparent;
     border-radius: 20px;
@@ -953,7 +918,9 @@ button:hover {
         font-size: 35px;
     }
 }
-
+/***********************************
+   CONTACT US ENDS
+***********************************/
 
 /* trial */
 
