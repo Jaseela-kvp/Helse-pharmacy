@@ -427,7 +427,7 @@ a:hover{
 }
 
 .licensed-bg {
-  background: url("../img/pexels-apasaric-7605733.jpg") no-repeat center center/cover;
+  background: url("../img/mission-bg_image.jpg") no-repeat center center/cover;
   position: absolute;
   inset: 0; /* top:0; right:0; bottom:0; left:0 */
   z-index: 1;
